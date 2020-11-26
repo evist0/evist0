@@ -5,7 +5,7 @@
 
 ### 👨🏼‍🎓 Education:
 - 2019 [SDB "Kontur"](https://kontur.ru/) Frontend courses.
-- 2019-2023 Bachelor of Automation and Computer Engineering, <b>Novosibirsk State Technical University</b>. 2th course student
+- 2019-2023 [<b>Novosibirsk State Technical University</b>](https://www.nstu.ru/). Bachelor of Automation and Computer Engineering. 2nd course student
 
 ### 👨🏻‍💻 Skills:
 - <b>Advanced:</b> Javascript/Typescript, React, Angular, HTML, CSS, SCSS.
