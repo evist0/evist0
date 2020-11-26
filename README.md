@@ -1,16 +1,18 @@
-### Hi there 👋
+# Angular, React. Frontend Middle Developer 👋
 
-<!--
-**evist0/evist0** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 📋 Work Experience:
+- Development of an application for learning foreign languages with Angular.
+- Development of E-Learning application with React.js. Feature-sliced + Effector.js
 
-Here are some ideas to get you started:
+### 👨🏼‍🎓 Education:
+- 2019 [<B>SDB "Kontur"</b>](https://kontur.ru/) Frontend courses.
+- 2019-2023 [<b>Novosibirsk State Technical University</b>](https://www.nstu.ru/) Software Engineer (3rd course).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 👨🏻‍💻 Skills:
+- <b>Advanced:</b> Javascript/Typescript, React.js, Effector, Mobx, Mobx-State-Tree, styled-components, Angular, HTML, SCSS,
+- <b>Intermediate:</b> Feature-sliced, Docker, Github Workflows, Webpack, Redux (redux-thunk, redux-saga), MongoDB, Express.js.
+- <b>Basic:</b> C, C++, C#, Linux, Postgres
+
+### 📫 Contacts
+- <b>Email:</b> [danil.tankoff@yandex.ru](mailto:danil.tankov@yandex.ru)
+- <b>Telegram:</b> [@Evist0](https://t.me/evist0)
