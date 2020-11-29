@@ -1,4 +1,4 @@
-# Angular, React middle developer 👋
+# Angular, React. Frontend Middle Developer 👋
 
 ### 📋 Work Experience:
 - Development of an application for learning foreign languages with Angular.
