@@ -1,6 +1,6 @@
 # Angular, React middle developer 👋
 
-### Work Experience:
+### 📋 Work Experience:
 - Development of an application for learning foreign languages with Angular.
 
 ### 👨🏼‍🎓 Education:
