@@ -4,7 +4,7 @@
 - Development of an application for learning foreign languages with Angular.
 
 ### 👨🏼‍🎓 Education:
-- 2019 [SDB "Kontur"](https://kontur.ru/) Frontend courses.
+- 2019 [SDB <b>"Kontur"</b>](https://kontur.ru/) Frontend courses.
 - 2019-2023 [<b>Novosibirsk State Technical University</b>](https://www.nstu.ru/). Bachelor of Automation and Computer Engineering. 2nd course student
 
 ### 👨🏻‍💻 Skills:
