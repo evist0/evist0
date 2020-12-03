@@ -10,7 +10,7 @@
 ### 👨🏻‍💻 Skills:
 - <b>Advanced:</b> Javascript/Typescript, React, Angular, HTML, CSS, SCSS.
 - <b>Intermediate:</b> SQL, MongoDB, Express.js.
-- <b>Basic:</b> C#, C++, Linux.
+- <b>Basic:</b> C#, C++, Webpack, Linux.
 
 ### 📫 Contacts
 - <b>Email:</b> [danil.tankoff@yandex.ru](mailto:danil.tankov@yandex.ru)
