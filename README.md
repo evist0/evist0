@@ -9,7 +9,7 @@
 
 ### 👨🏻‍💻 Skills:
 - <b>Advanced:</b> Javascript/Typescript, React, Angular, HTML, CSS, SCSS.
-- <b>Intermediate:</b> SQL, MongoDB, Express.js.
+- <b>Intermediate:</b> SQL, MongoDB, Express.js, Redux.
 - <b>Basic:</b> C#, C++, Webpack, Linux.
 
 ### 📫 Contacts
