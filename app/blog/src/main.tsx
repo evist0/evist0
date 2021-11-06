@@ -4,7 +4,7 @@ import { App } from 'app';
 
 render(
   <StrictMode>
-    <App/>
+    <App />
   </StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById('root'),
+);
