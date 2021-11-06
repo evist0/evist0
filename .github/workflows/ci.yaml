@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - 'develop'
+
+jobs:
+  misc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install
+        run: npm ci
+
+      - name: Check commit message
+        run: ./node_modules/.bin/commitlint -f HEAD~${{ github.event.pull_request.commits }} -t HEAD -g ./config/.commitlint.js --verbose
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit Tests
+        run: npm run test:ci
+
+      - name: E2E Tests
+        run: npm run test:e2e
+
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./coverage

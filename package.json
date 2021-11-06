@@ -1,0 +1,46 @@
+{
+  "name": "evist0",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "workspaces": [
+    "app/*",
+    "lib/*"
+  ],
+  "scripts": {
+    "start": "concurrently -n w: npm:*:start",
+    "api:start": "npm run start -w @evist0/api",
+    "blog:start": "npm run start -w @evist0/blog",
+    "backoffice:start": "npm run start -w @evist0/backoffice",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage",
+    "test:e2e": "npm run test:e2e --workspaces --if-present --ci"
+  },
+  "jest": {
+    "projects": [
+      "<rootDir>/app/*"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS -g 'config/.commitlint.js'"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "config/.cz-config.js"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^14.1.0",
+    "@types/jest": "^27.0.2",
+    "commitizen": "^4.2.4",
+    "concurrently": "^6.3.0",
+    "cz-customizable": "^6.3.0",
+    "husky": "^7.0.4",
+    "jest": "^27.3.1"
+  }
+}
