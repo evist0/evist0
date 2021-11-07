@@ -1,42 +1,69 @@
 version: "3.9"
 
 services:
+  traefik:
+    image: "traefik:latest"
+    command:
+      - "--api=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=traefik"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    networks:
+      - traefik
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.entrypoints=web"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.${DOMAIN}`)"
+      - "traefik.http.middlewares.traefik-compress.compress=true"
+      - "traefik.http.middlewares.auth.basicauth.users=${TRAEFIK_USER}:${TRAEFIK_PASSWORD}"
+      - "traefik.http.routers.traefik.middlewares=traefik-compress,auth"
+      - "traefik.http.routers.traefik.service=api@internal"
+
   api:
     image: "registry.evist0.me/api:latest"
     restart: unless-stopped
-    ports:
-      - "4000:4000"
+    networks:
+      - traefik
+    expose:
+      - 4000
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.api-evist0.entrypoints=web"
       - "traefik.http.routers.api-evist0.rule=Host(`api.${DOMAIN}`)"
-      - "traefik.http.routers.api-evist0.entrypoints=websecure"
-      - "traefik.http.routers.api-evist0.tls.certresolver=myresolver"
-      - "traefik.http.routers.api-evist0.service=api-evist0"
-      - "traefik.http.services.api-evist0.loadbalancer.server.port=4000"
       - "traefik.http.routers.api-evist0.middlewares=traefik-compress"
+      - "traefik.http.routers.api-evist0.service=api-evist0"
   blog:
     image: "registry.evist0.me/blog:latest"
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    networks:
+      - traefik
+    expose:
+      - 3000
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.blog-evist0.entrypoints=web"
       - "traefik.http.routers.blog-evist0.rule=Host(`${DOMAIN}`)"
-      - "traefik.http.routers.blog-evist0.entrypoints=websecure"
-      - "traefik.http.routers.blog-evist0.tls.certresolver=myresolver"
-      - "traefik.http.routers.blog-evist0.service=blog-evist0"
-      - "traefik.http.services.blog-evist0.loadbalancer.server.port=3000"
       - "traefik.http.routers.blog-evist0.middlewares=traefik-compress"
+      - "traefik.http.routers.blog-evist0.service=blog-evist0"
   backoffice:
     image: "registry.evist0.me/backoffice:latest"
     restart: unless-stopped
-    ports:
-      - "3001:3001"
+    networks:
+      - traefik
+    expose:
+      - 3001
     labels:
       - "traefik.enable=true"
+      - "traefik.http.routers.backoffice-evist0.entrypoints=web"
       - "traefik.http.routers.backoffice-evist0.rule=Host(`backoffice.${DOMAIN}`)"
-      - "traefik.http.routers.backoffice-evist0.entrypoints=websecure"
-      - "traefik.http.routers.backoffice-evist0.tls.certresolver=myresolver"
-      - "traefik.http.routers.backoffice-evist0.service=backoffice-evist0"
-      - "traefik.http.services.backoffice-evist0.loadbalancer.server.port=3001"
       - "traefik.http.routers.backoffice-evist0.middlewares=traefik-compress"
+      - "traefik.http.routers.backoffice-evist0.service=backoffice-evist0"
+
+networks:
+  traefik:

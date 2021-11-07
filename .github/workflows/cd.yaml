@@ -8,6 +8,9 @@ on:
 jobs:
   api:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://api.${{ secrets.DOMAIN }}
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -34,6 +37,9 @@ jobs:
 
   backoffice:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://backoffice.${{ secrets.DOMAIN }}
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -58,9 +64,11 @@ jobs:
           push: true
           tags: registry.evist0.me/backoffice:latest
 
-
   blog:
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://${{ secrets.DOMAIN }}
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -86,8 +94,11 @@ jobs:
           tags: registry.evist0.me/blog:latest
 
   deploy:
-    needs: [ api, backoffice, blog ]
     runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://${{ secrets.DOMAIN }}
+    needs: [ api, backoffice, blog ]
 
     steps:
       - name: Checkout 'master'
@@ -97,6 +108,10 @@ jobs:
         uses: SpicyPizza/create-envfile@v1
         with:
           envkey_DOMAIN: ${{ secrets.DOMAIN }}
+          envkey_TRAEFIK_PILOT_TOKEN: ${{ secrets.TRAEFIK_PILOT_TOKEN }}
+          envkey_TRAEFIK_USER: ${{ secrets.TRAEFIK_USER }}
+          envkey_TRAEFIK_PASSWORD: ${{ secrets.TRAEFIK_PASSWORD }}
+          envkey_LETS_ENCRYPT_EMAIL: ${{ secrets.LETS_ENCRYPT_EMAIL }}
           file_name: .env
 
       - name: Uploading .env
@@ -133,7 +148,7 @@ jobs:
           host: ${{ secrets.HOST_IP }}
           username: ${{ secrets.HOST_USERNAME }}
           key: ${{ secrets.HOST_KEY }}
-          script: docker compose up -d
+          script: docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
       - name: Prune old images
         uses: appleboy/ssh-action@master
