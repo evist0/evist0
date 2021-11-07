@@ -8,9 +8,6 @@ on:
 jobs:
   api:
     runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://api.evist0.me
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -37,9 +34,6 @@ jobs:
 
   backoffice:
     runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://backoffice.evist0.me
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -66,9 +60,6 @@ jobs:
 
   blog:
     runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://evist0.me
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
