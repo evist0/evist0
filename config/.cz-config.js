@@ -8,7 +8,6 @@ module.exports = {
     {value: 'style', name: 'style: Правки по кодстайлу'},
     {value: 'test', name: 'test: Добавление тестов'}
   ],
-
   scopes: [
     {name: 'repo'},
     {name: 'api'},
