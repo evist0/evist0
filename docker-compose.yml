@@ -40,6 +40,7 @@ services:
       - "traefik.http.routers.api-evist0.rule=Host(`api.${DOMAIN}`)"
       - "traefik.http.routers.api-evist0.middlewares=traefik-compress"
       - "traefik.http.routers.api-evist0.service=api-evist0"
+      - "traefik.http.services.api-evist0.loadbalancer.server.port=4000"
   blog:
     image: "registry.evist0.me/blog:latest"
     restart: unless-stopped
@@ -55,6 +56,7 @@ services:
       - "traefik.http.routers.blog-evist0.rule=Host(`${DOMAIN}`)"
       - "traefik.http.routers.blog-evist0.middlewares=traefik-compress"
       - "traefik.http.routers.blog-evist0.service=blog-evist0"
+      - "traefik.http.services.blog-evist0.loadbalancer.server.port=3000"
   backoffice:
     image: "registry.evist0.me/backoffice:latest"
     restart: unless-stopped
@@ -70,6 +72,6 @@ services:
       - "traefik.http.routers.backoffice-evist0.rule=Host(`backoffice.${DOMAIN}`)"
       - "traefik.http.routers.backoffice-evist0.middlewares=traefik-compress"
       - "traefik.http.routers.backoffice-evist0.service=backoffice-evist0"
-
+      - "traefik.http.services.backoffice-evist0.loadbalancer.server.port=3001"
 networks:
   traefik:
