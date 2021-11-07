@@ -28,6 +28,8 @@ services:
   api:
     image: "registry.evist0.me/api:latest"
     restart: unless-stopped
+    depends_on:
+      - traefik
     networks:
       - traefik
     expose:
@@ -41,6 +43,8 @@ services:
   blog:
     image: "registry.evist0.me/blog:latest"
     restart: unless-stopped
+    depends_on:
+      - traefik
     networks:
       - traefik
     expose:
@@ -54,6 +58,8 @@ services:
   backoffice:
     image: "registry.evist0.me/backoffice:latest"
     restart: unless-stopped
+    depends_on:
+      - traefik
     networks:
       - traefik
     expose:
