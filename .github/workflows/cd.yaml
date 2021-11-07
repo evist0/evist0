@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://api.${{ secrets.DOMAIN }}
+      url: https://api.evist0.me
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://backoffice.${{ secrets.DOMAIN }}
+      url: https://backoffice.evist0.me
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -68,7 +68,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://${{ secrets.DOMAIN }}
+      url: https://evist0.me
     steps:
       - name: Checkout 'master'
         uses: actions/checkout@master
@@ -97,7 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://${{ secrets.DOMAIN }}
+      url: https://evist0.me
     needs: [ api, backoffice, blog ]
 
     steps:
