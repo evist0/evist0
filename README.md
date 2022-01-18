@@ -3,6 +3,7 @@
 ### 📋 Work Experience:
 - Development of an application for learning foreign languages with Angular.
 - Development of E-Learning application with React.js. Feature-sliced + Effector.js
+- PWA SME Tinkoff
 
 ### 👨🏼‍🎓 Education:
 - 2019 [<B>SDB "Kontur"</b>](https://kontur.ru/) Frontend courses.
