@@ -1,4 +1,4 @@
-# Angular, React. Frontend Middle Developer 👋
+React Senior Developer 👋
 
 ### 📋 Work Experience:
 - Development of an application for learning foreign languages with Angular.
@@ -10,9 +10,9 @@
 - 2019-2023 [<b>Novosibirsk State Technical University</b>](https://www.nstu.ru/) Software Engineer (3rd course).
 
 ### 👨🏻‍💻 Skills:
-- <b>Advanced:</b> Javascript/Typescript, React.js, Effector, Mobx, Mobx-State-Tree, styled-components, Angular, HTML, SCSS,
+- <b>Advanced:</b> Javascript/Typescript, React.js, Effector, Mobx, Mobx-State-Tree, styled-components, Angular, HTML, SCSS.
 - <b>Intermediate:</b> Feature-sliced, Docker, Github Workflows, Webpack, Redux (redux-thunk, redux-saga), MongoDB, Express.js.
-- <b>Basic:</b> C, C++, C#, Linux, Postgres
+- <b>Basic:</b> C, C++, C#, Linux, Postgres.
 
 ### 📫 Contacts
 - <b>Email:</b> [danil.tankoff@yandex.ru](mailto:danil.tankov@yandex.ru)
