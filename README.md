@@ -7,7 +7,7 @@ React Senior Developer 👋
 
 ### 👨🏼‍🎓 Education:
 - 2019 [<B>SDB "Kontur"</b>](https://kontur.ru/) Frontend courses.
-- 2019-2023 [<b>Novosibirsk State Technical University</b>](https://www.nstu.ru/) Software Engineer (3rd course).
+- 2019-2023 [<b>Novosibirsk State Technical University</b>](https://www.nstu.ru/) Software Engineer (4rd course).
 
 ### 👨🏻‍💻 Skills:
 - <b>Advanced:</b> Javascript/Typescript, React.js, Effector, Mobx, Mobx-State-Tree, styled-components, Angular, HTML, SCSS.
